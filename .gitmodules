@@ -1,0 +1,3 @@
+[submodule "webenginebase"]
+	path = webenginebase
+	url = https://github.com/ericmoderbacher/webenginebase.git
