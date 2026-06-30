@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- Object Studio — first window. Shows an input object photo and the 6 Zero123++
+     novel views generated from it. Self-contained (no CDNs), opens as a local file. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Object Studio — Zero123++ multi-view</title>
+<style>
+  :root { color-scheme: dark; }
+  body {
+    margin: 0; font: 15px/1.5 -apple-system, system-ui, sans-serif;
+    background: #0d0d0f; color: #e7e7ea; padding: 2rem;
+  }
+  h1 { font-size: 1.15rem; font-weight: 600; margin: 0 0 .25rem; }
+  .sub { color: #9a9aa2; margin: 0 0 1.75rem; }
+  .stage { display: grid; grid-template-columns: minmax(220px, 320px) 1fr; gap: 2rem; align-items: start; }
+  figure { margin: 0; }
+  figcaption { font-size: .8rem; color: #9a9aa2; margin-top: .4rem; }
+  img { display: block; width: 100%; height: auto; border: 0.5px solid #2a2a30; border-radius: 6px; background: #151519; }
+  .views { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .views figcaption { text-align: center; }
+  .note { margin-top: 2rem; padding: 1rem 1.25rem; border-left: 2px solid #3a6df0;
+          background: #14161d; border-radius: 0 6px 6px 0; color: #b9bcc6; font-size: .88rem; }
+  code { background: #1c1c22; padding: .1em .4em; border-radius: 4px; }
+</style>
+</head>
+<body>
+  <h1>Object Studio · Zero123++ multi-view</h1>
+  <p class="sub">One photo of an object → six AI-synthesized novel views, generated natively the macOS way (modersNets on Metal).</p>
+
+  <div class="stage">
+    <figure>
+      <img src="input.png" alt="object fed to multi-view">
+      <figcaption>Input to multi-view — segmented object (or source, if no segmenter ran)</figcaption>
+    </figure>
+
+    <div>
+      <div class="views">
+        <figure><img src="view_0.png" alt="view 0"><figcaption>view 0</figcaption></figure>
+        <figure><img src="view_1.png" alt="view 1"><figcaption>view 1</figcaption></figure>
+        <figure><img src="view_2.png" alt="view 2"><figcaption>view 2</figcaption></figure>
+        <figure><img src="view_3.png" alt="view 3"><figcaption>view 3</figcaption></figure>
+        <figure><img src="view_4.png" alt="view 4"><figcaption>view 4</figcaption></figure>
+        <figure><img src="view_5.png" alt="view 5"><figcaption>view 5</figcaption></figure>
+      </div>
+    </div>
+  </div>
+
+  <p class="note">
+    These six are <strong>synthesized</strong>, not photographed — Zero123++'s fixed azimuth/elevation set.
+    Next steps toward real 3D: <strong>segment the object first</strong> (SAM, clean background — the model
+    wants a centered single object) for sharper views, then feed the six into reconstruction
+    (<code>nerf</code>/mesh) to get a spinnable model in <code>Online3DViewer</code>.
+  </p>
+</body>
+</html>

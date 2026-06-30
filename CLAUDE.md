@@ -61,14 +61,27 @@ Almost everything is documentation. The only thing that actually builds today:
   This repo only supplies the Lua filter (`webenginebase/media/embed-media.lua`)
   and runtime glue. There is no content build step to run inside this repo.
 
-- **No test runner exists.** `webenginebase/testing-framework.md` describes a planned
-  C++ visual/CV-diff testing sidecar — it is a design doc, nothing is built yet.
+- **One real test, no general runner.** `webenginebase/media/test/embed-media.test.sh`
+  is a self-contained golden-output test: it renders `embed-media.fixture.dj` through
+  Pandoc + `embed-media.lua` and `grep`-asserts the emitted embed HTML (the pinned
+  `data-*` attributes — run it after touching the media-embed syntax). Plain
+  executable, exits non-zero on failure:
+
+  ```sh
+  webenginebase/media/test/embed-media.test.sh
+  ```
+
+  Needs `pandoc` ≥ 3.1.12 on `PATH`, else falls back to the `pandoc/core` Docker
+  image; `SKIP`s (exit 0) if neither is present. The broader
+  `webenginebase/testing-framework.md` C++ visual/CV-diff sidecar is still only a
+  design doc — nothing is built.
 
 ## Real vs. planned (don't assume it runs)
 
 - **Real:** `Dockerfile.staticBackend` + `staticBackend.nginx.conf`,
-  `media/embed-media.lua`, `media/o3dv-embed.js`, `media/embed-media.css`, all the
-  Markdown decision docs.
+  `media/embed-media.lua`, `media/o3dv-embed.js`, `media/embed-media.css`,
+  `media/test/embed-media.test.sh` (the one runnable test), all the Markdown
+  decision docs.
 - **Stubs / planned:** `Dockerfile.openscad`, `Dockerfile.compilerexplorer` (empty
   stubs); the C++ testing sidecar (`testing-framework.md`); `architecture.md`'s
   CDN→LB→nginx→app→Postgres diagram is a *target sketch* — today's reality is one
