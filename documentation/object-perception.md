@@ -117,7 +117,7 @@ A **2D fastener classifier from still photos**.
 
 ## Checkpoint — what's prototyped (2026-06-29)
 
-Built in **`modersNets`** (consumed here; see `modersNets/docs/segmentationBench.md`):
+Built in **`modersNets`** (consumed here; see `modersNets/documentation/segmentationBench.md`):
 
 - **SAM2 segmentation, Metal-accelerated** — a resident warm engine (encoder+decoder on GPU,
   capped resolution) behind the `seg_bench` compare tool. SAM is **promptable + class-agnostic**:

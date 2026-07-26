@@ -1,6 +1,6 @@
 # studio/ — Object Studio
 
-The application side of CacheChute's [object-perception subsystem](../docs/object-perception.md),
+The application side of CacheChute's [object-perception subsystem](../documentation/object-perception.md),
 structured as the object analog of [`noid`](https://github.com/ericmoderbacher/modersNets)
 (*text → 3D human → render*): studio **owns the pipeline + viewer** and **composes
 networks from the `modersNets` zoo**. Dependency is one-way — studio consumes
