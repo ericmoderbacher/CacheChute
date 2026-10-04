@@ -4,11 +4,11 @@ An open-source appliance for automatically storing and retrieving physical objec
 
 ## What's here
 
-- `Hardware/` — the physical build: `BoM.md` (bill of materials), `CAD/` (an `.stl`
+- [`Hardware/`](Hardware/) — the physical build: `BoM.md` (bill of materials), `CAD/` (an `.stl`
   interface model), and `VendorDocuments/` (reference photos of the aluminum
   extrusion profiles).
-- `documentation/` — design writeups (Apple Pages).
-- `libraries/webenginebase/` — git submodule: a reusable web toolbox (documentation,
+- [`documentation/`](documentation/) — design writeups (Apple Pages).
+- [`libraries/webenginebase/`](libraries/webenginebase/) — git submodule: a reusable web toolbox (documentation,
   decisions, and vendored libraries) shared across Eric's sites. Most of the
   buildable substance lives here, not at the top level.
 

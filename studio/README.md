@@ -56,7 +56,7 @@ Until a real segmenter is wired, `manual` only **frames** the object — the bac
 1. Write `stages/<stage>.<name>.sh` reading/writing the contract files above.
 2. If it needs a network, add the arbitrary-image CLI in `modersNets/tools/` and
    call it from the adapter (mirror `zero123plus_gen2 --front`).
-3. Select it: `<STAGE>=<name> ./pipeline.sh`, or set it in `pipeline.conf`.
+3. Select it: `<STAGE>=<name> ./pipeline.sh`, or set it in [`pipeline.conf`](pipeline.conf).
 
 ## Requirements
 
